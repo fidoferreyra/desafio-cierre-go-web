@@ -44,6 +44,9 @@ func (r *repository) GetTicketByDestination(ctx context.Context, destination str
 			ticketsDest = append(ticketsDest, t)
 		}
 	}
+	if len(ticketsDest) == 0 {
+		return []domain.Ticket{}, fmt.Errorf("there are no tickets to that destination")
+	}
 
 	return ticketsDest, nil
 }

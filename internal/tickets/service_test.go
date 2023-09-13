@@ -123,7 +123,7 @@ func TestGetTotalTickets(t *testing.T) {
 	repo := NewRepositoryTest(dbMock)
 	service := NewService(repo)
 
-	avr, err := service.AverageDestination(cxt, "China")
+	avr, err := service.GetDestinationPercentage(cxt, "China")
 
 	assert.Nil(t, err)
 	assert.NotNil(t, avr)
